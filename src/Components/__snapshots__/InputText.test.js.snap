@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input should accept default or shadow as type 1`] = `
+<div>
+  <input
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    readOnly={false}
+    type="text"
+    value=""
+  />
+</div>
+`;

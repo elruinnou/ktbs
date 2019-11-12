@@ -1,22 +1,187 @@
+* {
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
+  width: 100%;
+  opacity: .5;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.logoContainer{
+  color: black;
+  line-height: 30px;
+  font-size: 23px;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  padding: 30px;
+  margin: 2rem auto 1rem;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(to bottom right, #e0b4f6, transparent 50%, #ffc4c4),
+           linear-gradient(to top right, #fef9be, transparent 50%, #aeeaed) transparent;
+  transition: all .3s ease;
+  overflow: hidden;
+}
+
+.logoContainer::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  padding-bottom: 100%;
+}
+
+.logoContainer.inputFocus{
+  animation: gradient-sequence .8s infinite;
+}
+
+.logoContainer.hasResult{
+  animation: none;
+  background: transparent;   
+}
+.logoContainer.singleResult{
+  font-size: 80px;
+  line-height: 138px;
+}
+
+@keyframes gradient-sequence {
+    0% {
+      background: linear-gradient(to bottom right, #e0b4f6, transparent 0%, #ffc4c4),
+           linear-gradient(to top right, #fef9be, transparent 100%, #aeeaed) transparent;
+    }
+    25% {
+      background: linear-gradient(to bottom right, #e0b4f6, transparent 25%, #ffc4c4),
+           linear-gradient(to top right, #fef9be, transparent 75%, #aeeaed) transparent;
+    }
+    50% {
+      background: linear-gradient(to bottom right, #e0b4f6, transparent 50%, #ffc4c4),
+           linear-gradient(to top right, #fef9be, transparent 50%, #aeeaed) transparent;
+    }
+    75% {
+      background: linear-gradient(to bottom right, #e0b4f6, transparent 75%, #ffc4c4),
+           linear-gradient(to top right, #fef9be, transparent 25%, #aeeaed) transparent;
+    }
+    100% {
+      background: linear-gradient(to bottom right, #e0b4f6, transparent 100%, #ffc4c4),
+           linear-gradient(to top right, #fef9be, transparent 0%, #aeeaed) transparent;
+    }
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding: 1rem;
 }
 
-.App-link {
-  color: #09d3ac;
+.App-header button{
+  color: grey;
+  background: transparent;
+  border: 0;
+  text-decoration: underline;
+}
+
+.App-header button:hover,
+.App-header button:focus{
+  text-decoration: none;
+}
+
+.gridContainer {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  margin: 5px auto 25px;
+  max-width: 280px;
+}
+
+.gridItem {
+  text-align: center;
+  margin: 0 7px;
+  height: 54px;
+}
+
+.gridItem button{
+  width: 45px;
+  height: 45px;
+  font-size: 46px;
+  line-height: 1px;
+  border: 1px solid black;
+  color: white;
+  padding: 5px 5px 10px;
+}
+
+.gridItem:nth-child(1) button{
+  background: #a802fb;
+  border-color: #6f01a7;
+}
+
+.gridItem:nth-child(2) button{
+  background: #ff6262;
+  border-color: #dc5050;
+  line-height: 1rem;
+  font-size: 35px;
+}
+
+.gridItem:nth-child(3) button{
+  border-color: #c7b806;
+  background: #f1e55c;
+  line-height: 3.25rem;
+}
+
+.gridItem:nth-child(4) button{
+  background: #11b3f0;
+  border-color: #0b86b5;
+  font-size: 33px;
+} 
+
+.gridItem button:hover,
+.gridItem button:focus{
+  background: white;
+  color: inherit;
+} 
+
+.operatorItem{
+  font-size: 40px;
+  line-height: 52px;
+  min-width: 35px;
+}
+
+input[type=text]{
+  padding: 5px;
+  border: 1px solid #DDDDDD;
+  transition: all .15s ease;
+  outline: none;
+  width: 55px;
+  height: 55px;
+  text-align: center;
+  font-size: 45px;
+}
+
+input[type=text]:hover,
+input[type=text]:focus
+{
+  border-color: #555555;
+}
+
+button{
+  font-family: 'Inconsolata', monospace;
+  cursor: pointer;
+  transition: all .15s ease;
+  outline: none;
 }

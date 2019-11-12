@@ -29,6 +29,10 @@
     ]
   },
   "devDependencies": {
-    "jest": "^24.9.0"
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.1",
+    "jest": "^24.9.0",
+    "prop-types": "^15.7.2",
+    "react-test-renderer": "^16.11.0"
   }
 }
